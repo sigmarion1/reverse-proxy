@@ -4,3 +4,15 @@ services:
         build: ./nginx
         ports:
             - "80:80"
+            - "81:81"
+        networks:
+            - ohmydb
+            - six-wedding
+
+networks:
+        ohmydb:
+                external:
+                        name: ohmydb_default
+        six-wedding:
+                external:
+                        name: six-wedding_default
